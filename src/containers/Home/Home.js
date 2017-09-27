@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Home = () => (
+const Home = ({ repoData }) => (
   <div>
     <p>You've made a homepage!</p>
   </div>
