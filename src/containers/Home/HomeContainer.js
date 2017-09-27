@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Home from './Home';
+import Loader from '../../components/Loader';
 import { getRepoData } from '../../redux/modules/repoData';
 
 class HomeContainer extends Component {
@@ -10,19 +11,24 @@ class HomeContainer extends Component {
   }
 
   render() {
-    return (
-      <Home
-        repoData={this.props.repoData}
-      />
-    )
+    if (this.props.repoData.length) {
+      return (
+        <Home
+          repoData={this.props.repoData}
+        />
+      );
+    } else {
+      return (
+        <Loader />
+      );
+    }
   }
 }
 
 const mapStateToProps = (state) => {
   return {
-    repoData: state.repo.repoData,
+    repoData: state.repo.data,
   };
 };
-
 
 export default connect(mapStateToProps)(HomeContainer);

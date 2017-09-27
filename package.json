@@ -5,8 +5,10 @@
   "dependencies": {
     "masonry-layout": "^4.2.0",
     "material-ui": "^0.19.2",
+    "prop-types": "^15.6.0",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
+    "react-ionicons": "^1.5.9",
     "react-masonry-component": "^5.0.7",
     "react-redux": "^5.0.6",
     "react-router-dom": "^4.2.2",

@@ -3,7 +3,7 @@ const REPO_DATA = 'REPO_DATA';
 const initialState = {
   data: [],
   loading: true,
-}
+};
 
 //Action creator
 export function loadRepos(repos) {

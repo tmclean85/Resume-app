@@ -1,0 +1,32 @@
+.home-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column nowrap;
+}
+
+.home-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  margin-top: 3rem;
+}
+
+.home-header-card {
+  width: 100%;
+  padding: 1rem;
+}
+
+.home-header-card-title {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.tab-wrapper {
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  width: 50%;
+}
