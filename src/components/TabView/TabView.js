@@ -4,16 +4,18 @@ import {Tabs, Tab} from 'material-ui/Tabs';
 import Paper from'material-ui/Paper';
 import Masonry from 'react-masonry-component';
 import Ionicon from 'react-ionicons';
+import ContactComponent from './ContactComponent';
+
+const paperStyle = {
+  width: 300,
+  height: 300,
+  margin: 10,
+};
 
 const tabStyle = {
   display: 'flex',
-  justifyContent: 'center',
-};
-
-const paperStyle = {
-  width: '45%',
-  height: 300,
-  margin: '1%',
+  flexDirection: 'row',
+  flexWrap: 'wrap',
 };
 
 class TabView extends Component {
@@ -41,15 +43,13 @@ class TabView extends Component {
         <Tab  label="About Me" value="a" icon={<Ionicon icon="ion-information-circled" fontSize="35px" color="white"></Ionicon>}>
           <p>HERE IS SOME INFO ABOUT ME</p>
         </Tab>
-        <Tab style={tabStyle} label="My Projects" value="b" icon={<Ionicon icon="ion-social-github" fontSize="35px" color="white"></Ionicon>}>
+        <Tab value="b" label="My Projects" value="b" icon={<Ionicon icon="ion-social-github" fontSize="35px" color="white"></Ionicon>}>
           <Masonry>
             {
               this.props.repoData.map(data => (
                 <Paper zDepth={2} style={paperStyle}>
                   <h1>{data.name}</h1>
-                  <p>{
-                      (data.description) ? data.description : 'No description'
-                    }</p>
+                  <p>{(data.description) ? data.description : 'No description'}</p>
                   <p>Link: {data.html_url}</p>
                   <p>Primary Language: {data.language}</p>
                 </Paper>
@@ -58,7 +58,7 @@ class TabView extends Component {
           </Masonry>  
         </Tab>  
         <Tab label="Contact Me" value="c" icon={<Ionicon icon="ion-ios-contact" fontSize="35px" color="white"></Ionicon>}>
-          <p>CONTACT DETAILS WILL GO HERE</p>
+          <ContactComponent />
         </Tab>  
       </Tabs>
     );
@@ -66,8 +66,10 @@ class TabView extends Component {
 
 };
 
-const mapStateToProps = (state) => ({
-  repoData: state.repo.data,
-})
+const mapStateToProps = (state) => {
+  return {
+    repoData: state.repo.data,
+  }
+}
 
 export default connect(mapStateToProps)(TabView);

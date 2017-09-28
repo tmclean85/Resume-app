@@ -30,14 +30,6 @@ const Home = ({ repoData }) => (
         <TabView />
       </Paper>
     </div>
-{/* <Masonry>
-      {
-        repoData.map((data, idx) => (
-          <Paper key={idx} style={style} zDepth={3}><p>{data.name}</p></Paper>
-        ))
-      }
-    </Masonry> */}
-
   </div>
 );
 
