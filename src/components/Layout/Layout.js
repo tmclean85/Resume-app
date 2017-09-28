@@ -5,17 +5,11 @@ import Header from '../Header';
 import './styles.css';
 
 const Layout = ({ children }) => (
-    <div className="appContentWrapper">
-      <div className="appHeader">
-        <Header />
-      </div>
-      <div className="appContent">
-        {children}
-      </div>  
-      <footer className="appFooter">    
-        <p>dat app tho</p>
-      </footer>       
+  <div className="appContentWrapper">
+    <div className="appContent">
+      {children}
     </div>
+  </div>
 );
 
 Layout.defaultProps = {
