@@ -13,3 +13,13 @@
   justify-content: space-around;
   align-items: center;
 }
+
+.card-text-wrapper {
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.card-text-item {
+  display: flex;
+  flex-flow: row nowrap;
+}
