@@ -1,21 +1,26 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import {Tabs, Tab} from 'material-ui/Tabs';
-import Paper from'material-ui/Paper';
+import {Card, CardActions, CardHeader, CardText} from 'material-ui/Card';
 import Masonry from 'react-masonry-component';
+import FlatButton from 'material-ui/FlatButton';
 import Ionicon from 'react-ionicons';
 import ContactComponent from './ContactComponent';
+import './styles.css';
 
-const paperStyle = {
-  width: 300,
-  height: 300,
+const cardStyle = {
+  width: '95%',
   margin: 10,
+  marginLeft: 15,
+  height: 'auto',
 };
 
 const tabStyle = {
   display: 'flex',
   flexDirection: 'row',
   flexWrap: 'wrap',
+  justifyContent: 'center',
+  alignItems: 'center',
 };
 
 class TabView extends Component {
@@ -26,6 +31,13 @@ class TabView extends Component {
       value: 'a',
     };
   }
+
+// Remove unnecessary items from API created_at string
+  formatDate = (date) => {
+    return (
+      date.substring(0, 10)
+    )  
+  };
 
   handleChange = (value) => {
     this.setState({
@@ -40,22 +52,33 @@ class TabView extends Component {
         onChange={this.handleChange}
         contentContainerClassName="tab-item-wrapper"
       >
-        <Tab  label="About Me" value="a" icon={<Ionicon icon="ion-information-circled" fontSize="35px" color="white"></Ionicon>}>
+        <Tab label="About Me" value="a" icon={<Ionicon icon="ion-information-circled" fontSize="35px" color="white"></Ionicon>}>
           <p>HERE IS SOME INFO ABOUT ME</p>
         </Tab>
-        <Tab value="b" label="My Projects" value="b" icon={<Ionicon icon="ion-social-github" fontSize="35px" color="white"></Ionicon>}>
-          <Masonry>
+        <Tab style={tabStyle} label="My Projects" value="b" icon={<Ionicon icon="ion-social-github" fontSize="35px" color="white"></Ionicon>}>
             {
               this.props.repoData.map(data => (
-                <Paper zDepth={2} style={paperStyle}>
-                  <h1>{data.name}</h1>
-                  <p>{(data.description) ? data.description : 'No description'}</p>
-                  <p>Link: {data.html_url}</p>
-                  <p>Primary Language: {data.language}</p>
-                </Paper>
+                <Card style={cardStyle}>
+                  <CardHeader
+                    title={data.name}
+                    subtitle={(data.description) ? data.description : 'No description'}
+                    actAsExpander={true}
+                    showExpandableButton={true}
+                  />
+                  <CardText expandable={true}>
+                    <div className="card-text-wrapper">
+                      <div className="card-text-item">
+                        <p>Started: {this.formatDate(data.created_at)}</p>
+                      </div>  
+                      <div className="card-text-item">
+                        <p>Primary Language: {data.language}</p>
+                      </div>  
+                      <a href={data.html_url}><Ionicon icon="ion-social-github" fontSize="35px" color="darkgrey" /></a>
+                    </div>  
+                  </CardText>
+                </Card>
               ))
             }
-          </Masonry>  
         </Tab>  
         <Tab label="Contact Me" value="c" icon={<Ionicon icon="ion-ios-contact" fontSize="35px" color="white"></Ionicon>}>
           <ContactComponent />
