@@ -1,0 +1,18 @@
+.appContentWrapper {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+}
+
+.appContent {
+  width: 100%;
+}
+
+.app-footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
+}

@@ -3,8 +3,8 @@ import { connect } from 'react-redux';
 import {Tabs, Tab} from 'material-ui/Tabs';
 import {Card, CardActions, CardHeader, CardText} from 'material-ui/Card';
 import Masonry from 'react-masonry-component';
-import FlatButton from 'material-ui/FlatButton';
 import Ionicon from 'react-ionicons';
+import Paper from 'material-ui/Paper';
 import ContactComponent from './ContactComponent';
 import './styles.css';
 
@@ -17,8 +17,6 @@ const cardStyle = {
 
 const tabStyle = {
   display: 'flex',
-  flexDirection: 'row',
-  flexWrap: 'wrap',
   justifyContent: 'center',
   alignItems: 'center',
 };
@@ -29,6 +27,7 @@ class TabView extends Component {
     super(props);
     this.state = {
       value: 'a',
+      openMenu: false,
     };
   }
 
@@ -44,6 +43,12 @@ class TabView extends Component {
       value: value,
     });
   };
+
+  handleMenuChange = (value) => {
+    this.setState({
+      openMenu: value,
+    });
+  }
   
   render() {
     return (
@@ -55,30 +60,35 @@ class TabView extends Component {
         <Tab label="About Me" value="a" icon={<Ionicon icon="ion-information-circled" fontSize="35px" color="white"></Ionicon>}>
           <p>HERE IS SOME INFO ABOUT ME</p>
         </Tab>
-        <Tab style={tabStyle} label="My Projects" value="b" icon={<Ionicon icon="ion-social-github" fontSize="35px" color="white"></Ionicon>}>
+        <Tab label="My Projects" value="b" icon={<Ionicon icon="ion-social-github" fontSize="35px" color="white"></Ionicon>}>
+          <Masonry className={'masonry'} elementType={'div'}>
             {
               this.props.repoData.map(data => (
-                <Card style={cardStyle}>
-                  <CardHeader
-                    title={data.name}
-                    subtitle={(data.description) ? data.description : 'No description'}
-                    actAsExpander={true}
-                    showExpandableButton={true}
-                  />
-                  <CardText expandable={true}>
+                <div className="project-card">
+                  <Card>
+                    <CardHeader
+                      title={data.name}
+                      subtitle={((data.description) ? data.description + ' ' : 'No description ')}
+                    />
+                    <CardText>
+                      <a className="card-link" href={data.html_url} target="_blank">Github Repo</a>
+                    </CardText>
                     <div className="card-text-wrapper">
-                      <div className="card-text-item">
+                      {/* <div className="card-text-item">
                         <p>Started: {this.formatDate(data.created_at)}</p>
-                      </div>  
+                      </div>
                       <div className="card-text-item">
                         <p>Primary Language: {data.language}</p>
-                      </div>  
-                      <a href={data.html_url}><Ionicon icon="ion-social-github" fontSize="35px" color="darkgrey" /></a>
+                      </div>
+                      <div className="octocat-box">
+                        <a href={data.html_url}><Ionicon icon="ion-social-github" fontSize="35px" color="darkgrey" /></a>
+                      </div> */}
                     </div>  
-                  </CardText>
-                </Card>
-              ))
+                  </Card>
+                </div>  
+              ))  
             }
+          </Masonry>  
         </Tab>  
         <Tab label="Contact Me" value="c" icon={<Ionicon icon="ion-ios-contact" fontSize="35px" color="white"></Ionicon>}>
           <ContactComponent />
