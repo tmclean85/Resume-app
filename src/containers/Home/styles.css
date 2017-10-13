@@ -9,7 +9,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 50%;
+  width: 100%;
   margin-top: 3rem;
 }
 
@@ -28,5 +28,5 @@
 .tab-wrapper {
   margin-top: 1rem;
   margin-bottom: 2rem;
-  width: 50%;
+  width: 100%;
 }

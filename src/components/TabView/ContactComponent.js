@@ -13,7 +13,7 @@ const contactStyle = {
 const ContactComponent = () => {
   return (
     <div className="contact-wrapper">
-      <a href="www.github.com/tmclean85"><Ionicon icon="ion-social-github" fontSize="100px" color="black" /></a>
+      <a href="https://www.github.com/tmclean85"><Ionicon icon="ion-social-github" fontSize="100px" color="black" /></a>
       <a href="mailto:trevor.a.mclean@gmail.com"><Ionicon icon="ion-ios-email" fontSize="100px" color="black" /></a>
       <a href="https://ca.linkedin.com/in/trevor-a-mclean"><Ionicon icon="ion-social-linkedin" fontSize="100px" color="black" /></a>
     </div>
