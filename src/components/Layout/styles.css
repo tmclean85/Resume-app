@@ -6,6 +6,10 @@
   justify-content: space-between;
 }
 
+.appContent {
+  width: 100%;
+}
+
 .app-footer {
   display: flex;
   justify-content: center;
