@@ -1,9 +1,8 @@
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import {
-  lightBlue200,
   blueGrey900,
   white,
-  pink400,  
+  pink400,
 } from 'material-ui/styles/colors';
 
 export default getMuiTheme({

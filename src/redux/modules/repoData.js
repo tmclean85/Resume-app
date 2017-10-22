@@ -2,10 +2,11 @@ const REPO_DATA = 'REPO_DATA';
 
 const initialState = {
   data: [],
+  filterData: [],
   loading: true,
 };
 
-//Action creator
+// Action creator
 export function loadRepos(repos) {
   return {
     type: REPO_DATA,
@@ -13,7 +14,7 @@ export function loadRepos(repos) {
   };
 }
 
-//Thunk
+// Thunk
 export function getRepoData() {
   return function (dispatch) {
     fetch('https://api.github.com/users/tmclean85/repos?client_id=a37c6077034750f953fc&client_secret=8ff75658b21aa8c5830b7efeae85f559b4d36a02')
@@ -25,16 +26,16 @@ export function getRepoData() {
   };
 }
 
-//Reducer
+// Reducer
 export function RepoReducer(state = initialState, action) {
-  switch(action.type) {
+  switch (action.type) {
     case REPO_DATA:
       return {
         ...state,
         data: action.payload,
         loading: false,
       };
-      default:
-        return state;
+    default:
+      return state;
   }
 }

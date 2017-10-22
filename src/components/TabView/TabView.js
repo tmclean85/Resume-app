@@ -6,6 +6,8 @@ import Masonry from 'react-masonry-component';
 import Ionicon from 'react-ionicons';
 import Paper from 'material-ui/Paper';
 import ContactComponent from './ContactComponent';
+import FilterList from './FilterList';
+import { loadRepos } from '../../redux/modules/repoData';
 import './styles.css';
 
 const cardStyle = {
@@ -61,32 +63,34 @@ class TabView extends Component {
           <p>HERE IS SOME INFO ABOUT ME</p>
         </Tab>
         <Tab label="My Projects" value="b" icon={<Ionicon icon="ion-social-github" fontSize="35px" color="white"></Ionicon>}>
+          <FilterList 
+            dispatch={this.props.dispatch}
+            handleChange={loadRepos(this.props.filterData)}
+            filterData={this.props.filterData}
+          />
           <Masonry className={'masonry'} elementType={'div'}>
             {
               this.props.repoData.map(data => (
                 <div className="project-card">
-                  <Card>
+                  <Card
+                    key={data.id}
+                  >
                     <CardHeader
                       title={data.name}
                       subtitle={((data.description) ? data.description + ' ' : 'No description ')}
                     />
                     <CardText>
-                      <a className="card-link" href={data.html_url} target="_blank">Github Repo</a>
+                      <div className="project-links">
+                        <a className="card-link" href={data.html_url} target="_blank">Github Repo</a>
+                        {(data.homepage)
+                          ? <a className="card-link" href={data.homepage} target="_blank">Github Homepage</a>
+                          : null
+                        }
+                      </div>
                     </CardText>
-                    <div className="card-text-wrapper">
-                      {/* <div className="card-text-item">
-                        <p>Started: {this.formatDate(data.created_at)}</p>
-                      </div>
-                      <div className="card-text-item">
-                        <p>Primary Language: {data.language}</p>
-                      </div>
-                      <div className="octocat-box">
-                        <a href={data.html_url}><Ionicon icon="ion-social-github" fontSize="35px" color="darkgrey" /></a>
-                      </div> */}
-                    </div>  
                   </Card>
-                </div>  
-              ))  
+                </div>
+              ))
             }
           </Masonry>  
         </Tab>  
@@ -102,6 +106,7 @@ class TabView extends Component {
 const mapStateToProps = (state) => {
   return {
     repoData: state.repo.data,
+    filter: state.filter.value,
   }
 }
 
