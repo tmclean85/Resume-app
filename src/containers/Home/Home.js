@@ -17,7 +17,7 @@ const Home = ({ repoData }) => (
     <div className="home-header">
       <Card className="home-header-card">
         <div className="home-header-card-title">
-          <Avatar src={repoData[0].owner.avatar_url} size={100} />
+          {/* <Avatar src={repoData[0].owner.avatar_url} size={100} /> */}
           <CardTitle
             title="Trevor McLean"
             subtitle="Developer of things web and native"
