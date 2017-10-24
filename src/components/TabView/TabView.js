@@ -6,6 +6,7 @@ import Masonry from 'react-masonry-component';
 import Ionicon from 'react-ionicons';
 import Paper from 'material-ui/Paper';
 import ContactComponent from './ContactComponent';
+import InfoComponent from './InfoComponent';
 import FilterList from './FilterList';
 import { loadRepos } from '../../redux/modules/repoData';
 import './styles.css';
@@ -54,7 +55,7 @@ class TabView extends Component {
         contentContainerClassName="tab-item-wrapper"
       >
         <Tab label="About Me" value="a" icon={<Ionicon icon="ion-information-circled" fontSize="35px" color={(this.state.value === "a") ? "white" : "lightgrey"}></Ionicon>}>
-          <p>HERE IS SOME INFO ABOUT ME</p>
+          <InfoComponent />
         </Tab>
         <Tab label="My Projects" value="b" icon={<Ionicon icon="ion-social-github" fontSize="35px" color={(this.state.value === "b") ? "white" : "lightgrey"}></Ionicon>}>
           <div className="filter-wrapper">
