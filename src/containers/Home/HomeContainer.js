@@ -11,15 +11,21 @@ class HomeContainer extends Component {
   }
 
   render() {
-    if (this.props.repoData.length) {
+    if (!this.props.repoData.length && !this.props.filteredProjects.length) {
+      return (
+        <Loader />
+      );
+    } else if(this.props.filteredProjects.length) {
       return (
         <Home
-          repoData={this.props.repoData}
+          repoData={this.props.filteredProjects}
         />
       );
     } else {
       return (
-        <Loader />
+        <Home
+          repoData={this.props.repoData}
+        />
       );
     }
   }
@@ -28,6 +34,7 @@ class HomeContainer extends Component {
 const mapStateToProps = (state) => {
   return {
     repoData: state.repo.data,
+    filteredProjects: state.filter.data,
   };
 };
 

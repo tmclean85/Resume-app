@@ -37,37 +37,32 @@ class TabView extends Component {
   formatDate = (date) => {
     return (
       date.substring(0, 10)
-    )  
+    )
   };
 
-  handleChange = (value) => {
+  handleTabChange = (value) => {
     this.setState({
       value: value,
     });
   };
-
-  handleMenuChange = (value) => {
-    this.setState({
-      openMenu: value,
-    });
-  }
   
   render() {
     return (
       <Tabs
         value={this.state.value}
-        onChange={this.handleChange}
+        onChange={this.handleTabChange}
         contentContainerClassName="tab-item-wrapper"
       >
-        <Tab label="About Me" value="a" icon={<Ionicon icon="ion-information-circled" fontSize="35px" color="white"></Ionicon>}>
+        <Tab label="About Me" value="a" icon={<Ionicon icon="ion-information-circled" fontSize="35px" color={(this.state.value === "a") ? "white" : "lightgrey"}></Ionicon>}>
           <p>HERE IS SOME INFO ABOUT ME</p>
         </Tab>
-        <Tab label="My Projects" value="b" icon={<Ionicon icon="ion-social-github" fontSize="35px" color="white"></Ionicon>}>
-          <FilterList 
-            dispatch={this.props.dispatch}
-            handleChange={loadRepos(this.props.filterData)}
-            filterData={this.props.filterData}
-          />
+        <Tab label="My Projects" value="b" icon={<Ionicon icon="ion-social-github" fontSize="35px" color={(this.state.value === "b") ? "white" : "lightgrey"}></Ionicon>}>
+          <div className="filter-wrapper">
+            <FilterList
+              dispatch={this.props.dispatch}
+              filterData={this.props.filterData}
+            />
+          </div>
           <Masonry className={'masonry'} elementType={'div'}>
             {
               this.props.repoData.map(data => (
@@ -92,9 +87,9 @@ class TabView extends Component {
                 </div>
               ))
             }
-          </Masonry>  
-        </Tab>  
-        <Tab label="Contact Me" value="c" icon={<Ionicon icon="ion-ios-contact" fontSize="35px" color="white"></Ionicon>}>
+          </Masonry>
+        </Tab>
+        <Tab label="Contact Me" value="c" icon={<Ionicon icon="ion-ios-contact" fontSize="35px" color={(this.state.value === "c") ? "white" : "lightgrey"}></Ionicon>}>
           <ContactComponent />
         </Tab>  
       </Tabs>

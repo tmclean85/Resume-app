@@ -1,7 +1,6 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Avatar from 'material-ui/Avatar';
 import Paper from 'material-ui/Paper';
-import Masonry from 'react-masonry-component';
 import { Card, CardTitle } from 'material-ui/Card';
 import TabView from '../../components/TabView';
 import './styles.css';
@@ -17,7 +16,7 @@ const Home = ({ repoData }) => (
     <div className="home-header">
       <Card className="home-header-card">
         <div className="home-header-card-title">
-          {/* <Avatar src={repoData[0].owner.avatar_url} size={100} /> */}
+          <Avatar src={repoData[0].owner.avatar_url} size={100} />
           <CardTitle
             title="Trevor McLean"
             subtitle="Developer of things web and native"

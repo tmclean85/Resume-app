@@ -2,8 +2,6 @@ const REPO_DATA = 'REPO_DATA';
 
 const initialState = {
   data: [],
-  filterData: [],
-  loading: true,
 };
 
 // Action creator
@@ -33,7 +31,6 @@ export function RepoReducer(state = initialState, action) {
       return {
         ...state,
         data: action.payload,
-        loading: false,
       };
     default:
       return state;
