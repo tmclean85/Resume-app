@@ -2,7 +2,8 @@ import React from 'react';
 import { connect } from 'react-redux';
 import SelectField from 'material-ui/SelectField';
 import MenuItem from 'material-ui/MenuItem';
-import { handleFilter, pushProjects } from '../../redux/modules/filterController';
+import { pushLanguage } from '../../redux/modules/filterController';
+import { loadRepos } from '../../redux/modules/repoData';
 
 import './styles.css';
 
@@ -16,19 +17,12 @@ const FilterList = ({ filterData, dispatch, repoData }) => {
     return langs.indexOf(item) === pos;
   });
 
-  const filterItems = (query) => {
-    return repoData.filter((el) => {
-      console.log(el.language === query);
-      return el.language === query;
-    });
-  };
-
   return (
     <SelectField
       multiple={true}
       hintText="Filter by Primary Language"
       value={this.uniqueLangs}
-      onChange={(event, index, value) => dispatch(pushProjects(filterItems(value)))}
+      onChange={(event, index, value) => dispatch(pushLanguage(value))}
     >
       {uniqueLangs.map((tag) => (
         <MenuItem
@@ -36,8 +30,14 @@ const FilterList = ({ filterData, dispatch, repoData }) => {
           insetChildren={true}
           value={tag}
           primaryText={tag}
+          checked={filterData && filterData.includes(tag)}
         />
       ))}
+      <MenuItem
+        insetChildren={true}
+        primaryText="Clear Filter"
+        onClick={() => dispatch(pushLanguage([]))}
+      />
     </SelectField>
   );
 };

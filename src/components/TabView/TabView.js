@@ -11,19 +11,6 @@ import FilterList from './FilterList';
 import { loadRepos } from '../../redux/modules/repoData';
 import './styles.css';
 
-const cardStyle = {
-  width: '95%',
-  margin: 10,
-  marginLeft: 15,
-  height: 'auto',
-};
-
-const tabStyle = {
-  display: 'flex',
-  justifyContent: 'center',
-  alignItems: 'center',
-};
-
 class TabView extends Component {
 
   constructor(props) {
@@ -47,6 +34,7 @@ class TabView extends Component {
     });
   };
   
+  
   render() {
     return (
       <Tabs
@@ -61,32 +49,55 @@ class TabView extends Component {
           <div className="filter-wrapper">
             <FilterList
               dispatch={this.props.dispatch}
-              filterData={this.props.filterData}
+              filterData={this.props.filter}
             />
           </div>
           <Masonry className={'masonry'} elementType={'div'}>
-            {
-              this.props.repoData.map(data => (
-                <div className="project-card">
-                  <Card
-                    key={data.id}
-                  >
-                    <CardHeader
-                      title={data.name}
-                      subtitle={((data.description) ? data.description + ' ' : 'No description ')}
-                    />
-                    <CardText>
-                      <div className="project-links">
-                        <a className="card-link" href={data.html_url} target="_blank">Github Repo</a>
-                        {(data.homepage)
-                          ? <a className="card-link" href={data.homepage} target="_blank">Github Homepage</a>
-                          : null
-                        }
-                      </div>
-                    </CardText>
-                  </Card>
-                </div>
-              ))
+            {(this.props.filter.length)
+              ?  this.props.repoData.filter(item => 
+                  item.language === this.props.filter[0]
+                ).map(data => (
+                  <div className="project-card">
+                    <Card
+                      key={data.id}
+                    >
+                      <CardHeader
+                        title={data.name}
+                        subtitle={((data.description) ? data.description + ' ' : 'No description ')}
+                      />
+                      <CardText>
+                        <div className="project-links">
+                          <a className="card-link" href={data.html_url} target="_blank">Github Repo</a>
+                          {(data.homepage)
+                            ? <a className="card-link" href={data.homepage} target="_blank">Github Homepage</a>
+                            : null
+                          }
+                        </div>
+                      </CardText>
+                    </Card>
+                  </div>
+                ))
+              : this.props.repoData.map(data => (
+                  <div className="project-card">
+                    <Card
+                      key={data.id}
+                    >
+                      <CardHeader
+                        title={data.name}
+                        subtitle={((data.description) ? data.description + ' ' : 'No description ')}
+                      />
+                      <CardText>
+                        <div className="project-links">
+                          <a className="card-link" href={data.html_url} target="_blank">Github Repo</a>
+                          {(data.homepage)
+                            ? <a className="card-link" href={data.homepage} target="_blank">Github Homepage</a>
+                            : null
+                          }
+                        </div>
+                      </CardText>
+                    </Card>
+                  </div>
+                ))
             }
           </Masonry>
         </Tab>
@@ -102,7 +113,7 @@ class TabView extends Component {
 const mapStateToProps = (state) => {
   return {
     repoData: state.repo.data,
-    filter: state.filter.value,
+    filter: state.filter.data,
   }
 }
 

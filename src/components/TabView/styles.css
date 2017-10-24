@@ -83,6 +83,12 @@
   flex-flow: column nowrap;
 }
 
+@media only screen and (min-width: 960px) {
+  .info-wrapper {
+    flex-flow: row nowrap;
+  }
+}
+
 .info-button {
   width: 10rem;
   margin: 2rem;
