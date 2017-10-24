@@ -5,11 +5,13 @@ import {
   Switch,
 } from 'react-router-dom';
 import Home from '../containers/Home';
+import NotFound from '../containers/NotFound';
 
 const Routes = () => (
   <Router>
     <Switch>
       <Route exact path="/home" component={Home} />
+      <Route component={NotFound} />
     </Switch>
   </Router>
 );

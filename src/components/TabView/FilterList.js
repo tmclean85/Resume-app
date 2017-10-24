@@ -3,16 +3,17 @@ import { connect } from 'react-redux';
 import SelectField from 'material-ui/SelectField';
 import MenuItem from 'material-ui/MenuItem';
 import { pushLanguage } from '../../redux/modules/filterController';
-import { loadRepos } from '../../redux/modules/repoData';
 
 import './styles.css';
 
 const FilterList = ({ filterData, dispatch, repoData }) => {
 
+// Create an array of all primary programming languages present in API data
   const langs = repoData.map((data) => {
     return data.language;
   });
 
+// Filter languages array to contain only unique entries  
   const uniqueLangs = langs.filter((item, pos) => {
     return langs.indexOf(item) === pos;
   });

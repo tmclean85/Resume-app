@@ -54,7 +54,7 @@ class TabView extends Component {
           </div>
           <Masonry className={'masonry'} elementType={'div'}>
             {(this.props.filter.length)
-              ?  this.props.repoData.filter(item => 
+              ?  this.props.repoData.filter(item =>
                   item.language === this.props.filter[0]
                 ).map(data => (
                   <div className="project-card">

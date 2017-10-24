@@ -1,0 +1,55 @@
+.not-found-wrapper {
+  display: flex;
+  justify-content: center;
+  padding-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.not-found-paper {
+  width: 75%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column nowrap;
+  padding: 1rem;
+}
+
+.not-found-image {
+  height: 50%;
+  width: auto;
+}
+
+@media only screen and (max-width: 750px) {
+
+  .not-found-wrapper {
+    margin: 0;
+    padding: 0;
+  }
+
+  .not-found-image {
+    height: 4rem;
+  }
+
+  .not-found-title {
+    font-size: 2rem;
+  }
+
+  .not-found-button {
+    height: 3rem;
+  }
+
+}
+
+.not-found-title {
+  text-align: center;
+  font-size: 3rem;
+}
+
+.not-found-text {
+  text-align: center;  
+  font-weight: bold;
+}
+
+.not-found-button {
+  width: 30%;
+}
