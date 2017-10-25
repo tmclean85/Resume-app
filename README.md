@@ -1,3 +1,10 @@
+## My resume web app
+Built using React, implemented Redux to handle state, styled with Material UI, responsive design.
+This is meant to function as my resume, however if you like feel free to download and npm install / npm start.
+
+
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 Below you will find some information on how to perform common tasks.<br>
