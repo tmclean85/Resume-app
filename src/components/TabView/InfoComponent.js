@@ -115,16 +115,17 @@ class InfoComponent extends Component {
             <li>WordPress</li>
             <li>REST API</li>
             <li>MAMP</li>
-          </ul>  
+          </ul>
           <p>Additionally I have a bit of experience and something of a start with the following:</p>
           <ul>
             <li>Angular2</li>
             <li>Node.js</li>
-            <li>postgresql</li>
-            <li>express</li>
+            <li>PostgresQL</li>
+            <li>Express</li>
             <li>Jest (unit testing)</li>
             <li>graphQL</li>
           </ul>
+          <p>In addition to these technologies, I also learned and practiced proper Github source control operations as part of collaborative codebases, agile development using Zenhub workflow management, and media-responsive and cross-browser development principles.</p>
           <p>By far the most important skill I took from the full-stack program was the ability to learn voraciously. I may not know it all, but I can learn it all!</p>
         </Dialog>
       </div>

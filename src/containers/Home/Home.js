@@ -5,12 +5,6 @@ import { Card, CardTitle } from 'material-ui/Card';
 import TabView from '../../components/TabView';
 import './styles.css';
 
-const style = {
-  margin: 15,
-  height: 100,
-  width: '25%',
-};
-
 const Home = ({ repoData }) => (
   <div className="home-wrapper">
     <div className="home-header">

@@ -2,14 +2,6 @@ import React from 'react';
 import Ionicon from 'react-ionicons';
 import './styles.css';
 
-const contactStyle = {
-  width: '100%',
-  height: 300,
-  display: 'flex',
-  justifyContent: 'space-around',
-  alignItems: 'center',
-};
-
 const ContactComponent = () => {
   return (
     <div className="contact-wrapper">

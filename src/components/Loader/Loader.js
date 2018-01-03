@@ -1,5 +1,4 @@
 import React from 'react';
-import CircularProgress from 'material-ui/CircularProgress';
 import './styles.css';
 import loader from '../../assets/loader.gif';
 

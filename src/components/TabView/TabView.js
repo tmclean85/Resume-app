@@ -1,14 +1,13 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import {Tabs, Tab} from 'material-ui/Tabs';
-import {Card, CardActions, CardHeader, CardText} from 'material-ui/Card';
+import {Card, CardHeader, CardText} from 'material-ui/Card';
+import FlatButton from 'material-ui/FlatButton';
 import Masonry from 'react-masonry-component';
 import Ionicon from 'react-ionicons';
-import Paper from 'material-ui/Paper';
 import ContactComponent from './ContactComponent';
 import InfoComponent from './InfoComponent';
 import FilterList from './FilterList';
-import { loadRepos } from '../../redux/modules/repoData';
 import './styles.css';
 
 class TabView extends Component {
@@ -67,6 +66,7 @@ class TabView extends Component {
                       />
                       <CardText>
                         <div className="project-links">
+                          <FlatButton label="Github Repo" secondary={true} />
                           <a className="card-link" href={data.html_url} target="_blank">Github Repo</a>
                           {(data.homepage)
                             ? <a className="card-link" href={data.homepage} target="_blank">Github Homepage</a>
