@@ -7,6 +7,7 @@ import Masonry from 'react-masonry-component';
 import Ionicon from 'react-ionicons';
 import ContactComponent from './ContactComponent';
 import InfoComponent from './InfoComponent';
+import FeaturedProjects from './FeaturedProjects';
 import FilterList from './FilterList';
 import './styles.css';
 
@@ -45,6 +46,10 @@ class TabView extends Component {
           <InfoComponent />
         </Tab>
         <Tab label="My Projects" value="b" icon={<Ionicon icon="ion-social-github" fontSize="35px" color={(this.state.value === "b") ? "white" : "lightgrey"}></Ionicon>}>
+          <div className="featured-projects-wrapper">
+            <FeaturedProjects />
+          </div>
+          <h3 className="proj-header">All Projects</h3>
           <div className="filter-wrapper">
             <FilterList
               dispatch={this.props.dispatch}
