@@ -43,19 +43,6 @@
   /* width: 22%; */
 }
 
-@media only screen and (min-width: 600px) {
-  .project-card {
-      width: 50%;
-  }
-}
-
-@media only screen and (min-width: 960px) {
-  .project-card {
-      width: 30%;
-      margin: 1rem;
-  }
-}
-
 .card-link {
   color: inherit;
   text-decoration: none;
@@ -83,13 +70,134 @@
   flex-flow: column nowrap;
 }
 
-@media only screen and (min-width: 960px) {
-  .info-wrapper {
-    flex-flow: row nowrap;
-  }
-}
-
 .info-button {
   width: 10rem;
   margin: 2rem;
+}
+
+.featured-projects-wrapper {
+  margin-top: 3rem;
+  margin-bottom: 5rem;
+  display: flex;
+  justify-content: center;
+  flex-flow: column nowrap;
+}
+
+.featured-header {
+  text-align: center;
+  font-family: Roboto, sans-serif;
+  font-size: 20px;
+  color: rgba(38, 50, 56, 0.87);
+  font-weight: 500;
+  margin: 3rem 0rem;
+}
+
+.featured-component-wrapper {
+  display: flex;
+  width: 85%;
+  align-self: center;
+  flex-flow: column nowrap;
+}
+
+.featured-component-item {
+  width: 100%;
+  display: flex;
+  height: auto;
+  flex-flow: column nowrap;
+  margin-bottom: 2rem;
+  border: 1px solid lightgrey;
+  box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.3);
+  border-radius: 3px;
+}
+
+.featured-component-item-image-wrapper {
+  display: flex;
+  position: relative;
+  height: 100%;
+  width: 100%;
+  border-radius: 3px 3px 0px 0px;
+  overflow: hidden;
+}
+
+.featured-component-item-image {
+  width: 100%;
+  height: 100%;
+}
+
+.featured-component-item-info-wrapper {
+  display: flex;
+  flex-flow: column nowrap;
+  position: absolute;
+  bottom: 0;
+  height: auto;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  justify-content: flex-end;
+}
+
+.featured-component-item-info-wrapper h3,p {
+  font-family: Roboto, sans-serif;
+  font-weight: 300;
+  margin: 0;
+  margin-left: 1rem;
+  margin-bottom: 1rem;
+  margin-top: 0.5rem;
+}
+
+.featured-item-link {
+  margin-bottom: 1rem;
+  margin-left: 1rem;
+}
+
+.featured-component-item-expander {
+  height: auto;
+  width: 100%;
+  transition-property: height;
+  transition-duration: 3s;
+  overflow: hidden;
+}
+
+.hider {
+  height: 0;
+  transition-property: height;
+  transition-duration: 3s;
+  overflow: hidden;
+}
+
+/** TABLET **/
+
+@media only screen and (min-width: 600px) {
+  .project-card {
+    width: 50%;
+  }
+
+  .featured-component-item {
+    width: 45%;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+  }
+
+}
+
+/**DESKTOP**/
+
+@media only screen and (min-width: 960px) {
+  .project-card {
+    width: 30%;
+    margin: 1rem;
+  }
+
+  .info-wrapper {
+    flex-flow: row nowrap;
+  }
+
+}
+
+.proj-header {
+  font-size: 1.25rem;
+  font-family: Roboto, sans-serif;
+  font-weight: 400;
+  color: rgba(38, 50, 56, 0.87);
+  text-align: center;
 }

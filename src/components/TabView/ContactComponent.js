@@ -3,6 +3,7 @@ import Ionicon from 'react-ionicons';
 import './styles.css';
 
 const ContactComponent = () => {
+
   return (
     <div className="contact-wrapper">
       <a href="https://www.github.com/tmclean85"><Ionicon icon="ion-social-github" fontSize="100px" color="black" /></a>
