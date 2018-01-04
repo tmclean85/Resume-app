@@ -89,6 +89,7 @@ class FeaturedProjects extends Component {
             <div className="featured-component-item-info-wrapper" onClick={this.pong}>
               <h3>Genghis Pong</h3>
               <p>An exercise in object-oriented programming</p>
+              <Ionicon className="expander-arrow" icon={(this.state.pong) ? "ion-arrow-up-b" : "ion-arrow-down-b" } fontSize="30px" color="white"></Ionicon>
             </div>
           </div>
           <div className={(this.state.pong) ? "featured-component-item-expander" : "hider" }>
@@ -106,7 +107,7 @@ class FeaturedProjects extends Component {
             <div className="featured-component-item-info-wrapper" onClick={this.vendOMatic}>
               <h3>Vend-O-Matic</h3>
               <p>An exercise in test-driven development using Jest</p>
-              <Ionicon icon="ion-social-github" fontSize="20px" color="black"></Ionicon>
+              <Ionicon className="expander-arrow" icon={(this.state.vendOMatic) ? "ion-arrow-up-b" : "ion-arrow-down-b" } fontSize="30px" color="white"></Ionicon>
             </div>
           </div>
           <div className={(this.state.vendOMatic) ? "featured-component-item-expander" : "hider" }>
@@ -122,6 +123,7 @@ class FeaturedProjects extends Component {
             <div className="featured-component-item-info-wrapper" onClick={this.inhabitent}>
               <h3>Inhabitent</h3>
               <p>A custom Wordpress theme for a fictional camping supplier</p>
+              <Ionicon className="expander-arrow" icon={(this.state.inhabitent) ? "ion-arrow-up-b" : "ion-arrow-down-b" } fontSize="30px" color="white"></Ionicon>
             </div>
           </div>
           <div className={(this.state.inhabitent) ? "featured-component-item-expander" : "hider" }>
@@ -138,6 +140,7 @@ class FeaturedProjects extends Component {
             <div className="featured-component-item-info-wrapper" onClick={this.r10}>
               <h3>R10</h3>
               <p>An iOS/Android companion app for a fictional tech conference</p>
+              <Ionicon className="expander-arrow" icon={(this.state.r10) ? "ion-arrow-up-b" : "ion-arrow-down-b" } fontSize="30px" color="white"></Ionicon>
             </div>
           </div>
           <div className={(this.state.r10) ? "featured-component-item-expander" : "hider" }>
@@ -153,6 +156,7 @@ class FeaturedProjects extends Component {
             <div className="featured-component-item-info-wrapper" onClick={this.resume}>
               <h3>Personal web app</h3>
               <p>The React/Redux web app you're using right now, actually!</p>
+              <Ionicon className="expander-arrow" icon={(this.state.resume) ? "ion-arrow-up-b" : "ion-arrow-down-b" } fontSize="30px" color="white"></Ionicon>
             </div>
           </div>
           <div className={(this.state.resume) ? "featured-component-item-expander" : "hider" }>
@@ -169,6 +173,7 @@ class FeaturedProjects extends Component {
             <div className="featured-component-item-info-wrapper" onClick={this.instanews}>
               <h3>InstaNews</h3>
               <p>Quickly and easily check the top stories in your favourite news categories!</p>
+              <Ionicon className="expander-arrow" icon={(this.state.instanews) ? "ion-arrow-up-b" : "ion-arrow-down-b" } fontSize="30px" color="white"></Ionicon>
             </div>
           </div>
           <div className={(this.state.instanews) ? "featured-component-item-expander" : "hider" }>
@@ -185,6 +190,7 @@ class FeaturedProjects extends Component {
             <div className="featured-component-item-info-wrapper" onClick={this.unya}>
               <h3>UNYA</h3>
               <p>A custom Wordpress theme for Vancouver-based Urban Native Youth Association</p>
+              <Ionicon className="expander-arrow" icon={(this.state.unya) ? "ion-arrow-up-b" : "ion-arrow-down-b" } fontSize="30px" color="white"></Ionicon>
             </div>
           </div>
           <div className={(this.state.unya) ? "featured-component-item-expander" : "hider" }>

@@ -136,6 +136,10 @@
   justify-content: flex-end;
 }
 
+.featured-component-item-info-wrapper:hover {
+  cursor: pointer;
+}
+
 .featured-component-item-info-wrapper h3,p {
   font-family: Roboto, sans-serif;
   font-weight: 300;
@@ -165,6 +169,19 @@
   overflow: hidden;
 }
 
+.proj-header {
+  font-size: 1.25rem;
+  font-family: Roboto, sans-serif;
+  font-weight: 400;
+  color: rgba(38, 50, 56, 0.87);
+  text-align: center;
+}
+
+.expander-arrow {
+  margin-left: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
 /** TABLET **/
 
 @media only screen and (min-width: 600px) {
@@ -192,12 +209,13 @@
     flex-flow: row nowrap;
   }
 
+  .featured-component-item-info-wrapper {
+    min-height: 7rem;
+  }
+
 }
 
-.proj-header {
-  font-size: 1.25rem;
-  font-family: Roboto, sans-serif;
-  font-weight: 400;
-  color: rgba(38, 50, 56, 0.87);
-  text-align: center;
+.expander-arrow {
+  margin-left: 0.5rem;
+  margin-bottom: 0.5rem;
 }
