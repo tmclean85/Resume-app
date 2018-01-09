@@ -63,7 +63,7 @@ class InfoComponent extends Component {
         />
         <span className="pdf-wrapper">
           <h3>Prefer a more traditional resume?</h3>
-          <a href="http://trevormclean.ca/trevor-mclean-resume.pdf">
+          <a href="http://trevormclean.ca/static/media/trevor-mclean-resume.pdf">
             <RaisedButton
               className="info-button"
               label="pdf"
