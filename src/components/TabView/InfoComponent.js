@@ -122,14 +122,15 @@ class InfoComponent extends Component {
           </ul>
           <p>Enthusiastic dabbler:</p>
           <ul>
-            <li>Apple xCode</li>
-            <li>Android SDK</li>
+            <li>MongoDB</li>
             <li>Angular2</li>
             <li>NodeJS</li>
             <li>PostgresQL</li>
             <li>Express</li>
             <li>TDD with Jest</li>
             <li>graphQL</li>
+            <li>Apple xCode</li>
+            <li>Android SDK</li>
           </ul>
           <p>Additional skills:</p>
           <ul>
