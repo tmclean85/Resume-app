@@ -61,6 +61,13 @@ class InfoComponent extends Component {
           onClick={this.handleSchoolOpen}
           icon={<Ionicon icon="ion-code" fontSize="25px" color="black"></Ionicon>}
         />
+        {/* <h3>Prefer a more traditional resume?</h3>
+        <RaisedButton
+          className="info-button"
+          label="pdf"
+          onClick={null}
+          icon={<Ionicon icon="ion-ios-download-outline" fontSize="25px" color="black"></Ionicon>}
+        /> */}
         <Dialog
           title="About My Work"
           actions={actions}
@@ -104,7 +111,7 @@ class InfoComponent extends Component {
             <li>HTML5</li>
             <li>CSS3 with SASS</li>
             <li>JavaScript (ES6, jQuery)</li>
-            <li>React</li>
+            <li>React/React Native</li>
             <li>Redux</li>
             <li>Agile methodology</li>
             <li>Responsive development</li>
@@ -115,6 +122,8 @@ class InfoComponent extends Component {
           </ul>
           <p>Enthusiastic dabbler:</p>
           <ul>
+            <li>Apple xCode</li>
+            <li>Android SDK</li>
             <li>Angular2</li>
             <li>NodeJS</li>
             <li>PostgresQL</li>
@@ -125,7 +134,7 @@ class InfoComponent extends Component {
           <p>Additional skills:</p>
           <ul>
           <li>Loves to learn from others, and teach where able</li>
-          <li>Acutely aware of how much he doesn't know but is constantly and enthusiastically working on it</li>
+          <li>Aware of how much he doesn't know but is enthusiastically working on it</li>
           </ul>
           <p>I completed a highly condensed and intensive 6-month Full Stack Development program at RED Academy in Vancouver in October of 2017. I learned a tremendous amount, just enough to be appropriately humbled by the sheer volume of how much more there is to learn. I'm eager to on-board with an experienced team and learn from them while also making a meaningful contribution to the product and culture of my eventual home.</p>
         </Dialog>
