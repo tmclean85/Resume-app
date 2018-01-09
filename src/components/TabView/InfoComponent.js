@@ -57,9 +57,9 @@ class InfoComponent extends Component {
         />
         <RaisedButton
           className="info-button"
-          label="school"
+          label="code"
           onClick={this.handleSchoolOpen}
-          icon={<Ionicon icon="ion-university" fontSize="25px" color="black"></Ionicon>}
+          icon={<Ionicon icon="ion-code" fontSize="25px" color="black"></Ionicon>}
         />
         <Dialog
           title="About My Work"
@@ -92,41 +92,42 @@ class InfoComponent extends Component {
           <p>I'm also an accomplished camper, and hope to continue to zealously practice my craft during the more conducive seasons.</p>
         </Dialog>
         <Dialog
-          title="About My Education"
+          title="About My Powers"
           actions={actions}
           modal={false}
           open={this.state.schoolOpen}
           onRequestClose={this.handleModalClose}
           autoScrollBodyContent={true}
         >
-          <p>I graduated from Queen Elizabeth Senior Secondary in 2003.</p>
-          <p>During my career in logistics I took courses in Industrial First Aid and numerous management, leadership, and lean operating philosophy courses.</p>
-          <p>In 2017 I took the full-stack development program at RED Academy. We covered a pretty serious tech stack during the program and I'm more comfortable with some languages and frameworks than others.</p>
-          <p>I'm very comfortable with the following:</p>
+          <p>Super fluent:</p>
           <ul>
-            <li>CSS3 (SASS/SCSS)</li>
             <li>HTML5</li>
-            <li>JavaScript (jQuery)</li>
-            <li>PHP</li>
-            <li>React / React Native</li>
+            <li>CSS3 with SASS</li>
+            <li>JavaScript (ES6, jQuery)</li>
+            <li>React</li>
             <li>Redux</li>
-            <li>MongoDB</li>
-            <li>Meteor</li>
-            <li>WordPress</li>
-            <li>REST API</li>
-            <li>MAMP</li>
+            <li>Agile methodology</li>
+            <li>Responsive development</li>
+            <li>WordPress and related PHP</li>
+            <li>Git</li>
+            <li>Gulp</li>
+            <li>Front-end ninjitsu</li>
           </ul>
-          <p>Additionally I have a bit of experience and something of a start with the following:</p>
+          <p>Enthusiastic dabbler:</p>
           <ul>
             <li>Angular2</li>
-            <li>Node.js</li>
+            <li>NodeJS</li>
             <li>PostgresQL</li>
             <li>Express</li>
-            <li>Jest (unit testing)</li>
+            <li>TDD with Jest</li>
             <li>graphQL</li>
           </ul>
-          <p>In addition to these technologies, I also learned and practiced proper Github source control operations as part of collaborative codebases, agile development using Zenhub workflow management, and media-responsive and cross-browser development principles.</p>
-          <p>By far the most important skill I took from the full-stack program was the ability to learn voraciously. I may not know it all, but I can learn it all!</p>
+          <p>Additional skills:</p>
+          <ul>
+          <li>Loves to learn from others, and teach where able</li>
+          <li>Acutely aware of how much he doesn't know but is constantly and enthusiastically working on it</li>
+          </ul>
+          <p>I completed a highly condensed and intensive 6-month Full Stack Development program at RED Academy in Vancouver in October of 2017. I learned a tremendous amount, just enough to be appropriately humbled by the sheer volume of how much more there is to learn. I'm eager to on-board with an experienced team and learn from them while also making a meaningful contribution to the product and culture of my eventual home.</p>
         </Dialog>
       </div>
     );
