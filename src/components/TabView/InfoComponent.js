@@ -61,13 +61,16 @@ class InfoComponent extends Component {
           onClick={this.handleSchoolOpen}
           icon={<Ionicon icon="ion-code" fontSize="25px" color="black"></Ionicon>}
         />
-        {/* <h3>Prefer a more traditional resume?</h3>
-        <RaisedButton
-          className="info-button"
-          label="pdf"
-          onClick={null}
-          icon={<Ionicon icon="ion-ios-download-outline" fontSize="25px" color="black"></Ionicon>}
-        /> */}
+        <span className="pdf-wrapper">
+          <h3>Prefer a more traditional resume?</h3>
+          <a href="http://trevormclean.ca/trevor-mclean-resume.pdf">
+            <RaisedButton
+              className="info-button"
+              label="pdf"
+              icon={<Ionicon icon="ion-ios-download-outline" fontSize="25px" color="black"></Ionicon>}
+            />
+          </a>
+        </span>
         <Dialog
           title="About My Work"
           actions={actions}
