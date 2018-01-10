@@ -71,7 +71,6 @@ class TabView extends Component {
                       />
                       <CardText>
                         <div className="project-links">
-                          <FlatButton label="Github Repo" secondary={true} />
                           <a className="card-link" href={data.html_url} target="_blank">Github Repo</a>
                           {(data.homepage)
                             ? <a className="card-link" href={data.homepage} target="_blank">Github Homepage</a>
