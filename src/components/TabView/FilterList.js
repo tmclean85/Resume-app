@@ -23,7 +23,7 @@ const FilterList = ({ filterData, dispatch, repoData }) => {
     <SelectField
       multiple={true}
       hintText="Filter by Primary Language"
-      value={filterData}
+      value={this.uniqueLangs}
       onChange={(event, index, value) => dispatch(pushLanguage(value))}
     >
       {uniqueLangs.map((tag) => (
