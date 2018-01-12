@@ -6,6 +6,9 @@ import inhabitent from '../../assets/inhabitent-new.png';
 import resume from '../../assets/resume-screenshot.png';
 import instanews from '../../assets/instanews-screenshot.png';
 import unya from '../../assets/unya-screenshot.png';
+import pong from '../../assets/pong.png';
+import r10screenshot from '../../assets/r10-screenshot.png';
+import vendomatic from '../../assets/vendomatic.png';
 
 class FeaturedProjects extends Component {
 
@@ -85,7 +88,7 @@ class FeaturedProjects extends Component {
 
         <div className="featured-component-item">
           <div className="featured-component-item-image-wrapper">
-            <img className="featured-component-item-image" src="https://raw.githubusercontent.com/tmclean85/Pong/master/public/images/gameplay.png" />
+            <img className="featured-component-item-image" src={pong} />
             <div className="featured-component-item-info-wrapper" onClick={this.pong}>
               <h3>Genghis Pong</h3>
               <p>An exercise in object-oriented programming</p>
@@ -103,7 +106,7 @@ class FeaturedProjects extends Component {
 
         <div className="featured-component-item">
           <div className="featured-component-item-image-wrapper">
-            <img className="featured-component-item-image" src="https://raw.githubusercontent.com/tmclean85/Vend-O-Matic/master/screenshot.png" />
+            <img className="featured-component-item-image" src={vendomatic} />
             <div className="featured-component-item-info-wrapper" onClick={this.vendOMatic}>
               <h3>Vend-O-Matic</h3>
               <p>An exercise in test-driven development using Jest</p>
@@ -136,7 +139,7 @@ class FeaturedProjects extends Component {
 
         <div className="featured-component-item">
           <div className="featured-component-item-image-wrapper">
-            <img className="featured-component-item-image" src="https://raw.githubusercontent.com/tmclean85/R10/master/js/assets/images/screen_shot_session.png" />
+            <img className="featured-component-item-image" src={r10screenshot} />
             <div className="featured-component-item-info-wrapper" onClick={this.r10}>
               <h3>R10</h3>
               <p>An iOS/Android companion app for a fictional tech conference</p>

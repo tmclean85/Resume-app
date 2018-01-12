@@ -1,6 +1,6 @@
 {
   "name": "tmclean-portfolio",
-  "homepage" : "http://www.trevormclean.ca",
+  "homepage" : "https://www.trevormclean.ca",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
