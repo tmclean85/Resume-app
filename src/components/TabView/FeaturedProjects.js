@@ -166,7 +166,7 @@ class FeaturedProjects extends Component {
             <p>I created this web app using React, with Redux to manage state here and there. The main projects 
               section is populated using the Github API, so it shows all of my personal repos. 
             </p>
-            <a className="featured-item-link" href="https://github.com/tmclean85/R10"><Ionicon icon="ion-social-github" fontSize="30px" color="black"></Ionicon></a>
+            <a className="featured-item-link" href="https://github.com/tmclean85/Resume-app"><Ionicon icon="ion-social-github" fontSize="30px" color="black"></Ionicon></a>
           </div>
         </div>
 

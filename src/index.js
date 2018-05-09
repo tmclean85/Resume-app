@@ -26,4 +26,4 @@ const Trevor = () => (
 );
 
 ReactDOM.render(<Trevor />, document.getElementById('root'));
-registerServiceWorker();
+// registerServiceWorker();

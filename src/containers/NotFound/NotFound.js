@@ -11,7 +11,7 @@ const NotFound = () => (
       <img className="not-found-image" src={GrumpyCat} alt="grumpycat" />
       <h1 className="not-found-title">NOPE.</h1>
       <p className="not-found-text">We've only got one page here, friend.</p>
-      <FlatButton label="back!" secondary={true} href="/home" class="not-found-button" />
+      <FlatButton label="back!" secondary={true} href="/" class="not-found-button" />
     </Paper>
   </div>
 );
